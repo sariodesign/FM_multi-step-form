@@ -1,4 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
+
+export const bgRound = createVar();
 
 export const container = style({
     display: 'flex'
@@ -6,6 +8,7 @@ export const container = style({
 
 export const round = style({
     alignItems: 'center',
+    backgroundColor: bgRound,
     borderRadius: '50%',
     color: '#000',
     display: 'flex',
@@ -13,7 +16,17 @@ export const round = style({
     justifyContent: 'center',
     textAlign: 'center',
     textDecoration: 'none',
-    width: '50px'
+    width: '50px',
+
+    vars: {
+        [bgRound]: '#ccc'
+    },
+
+    ':hover': {
+        vars: {
+            [bgRound]: 'red'
+        }
+    },
 });
 
 export const text = style({
