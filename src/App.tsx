@@ -3,8 +3,8 @@ import * as link from "./components/RouteNavigation/RouteNavigation.css";
 import * as data from "./data/mock";
 
 const App = () => {
-  const Links = data.routeLinks.map(item => {
-    return <div className={link.container}>
+  const Links = data.routeLinks.map((item, index) => {
+    return <div className={link.item} key={index}>
       <Link className={link.round} to={item.to}>{item.count}</Link>
       <div className={link.text}>
         <span className={link.tag}>{item.tag}</span>
@@ -15,7 +15,9 @@ const App = () => {
 
   return (
     <div className="App">
-      {Links}
+      <aside className={link.navigation}>
+        {Links}
+      </aside>
       <Outlet />
     </div>
   )

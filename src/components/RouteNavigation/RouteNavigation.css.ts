@@ -1,31 +1,38 @@
-import { createVar, style } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
+import { vars } from '../../assets/GlobalVariablesTheme.css'
 
-export const bgRound = createVar();
+globalStyle('html, body', {
+  margin: 0
+});
 
-export const container = style({
+export const navigation = style({
+    backgroundImage: 'url("/bg-sidebar-mobile.svg")',
+    backgroundRepeat: 'no-repeat',
     display: 'flex'
+})
+
+export const item = style({
+    display: 'flex',
+    fontFamily: vars.font.base
 })
 
 export const round = style({
     alignItems: 'center',
-    backgroundColor: bgRound,
+    backgroundColor: vars.colors.neutral.transparent,
+    border: '1px solid',
+    borderColor: vars.colors.neutral.magnolia,
     borderRadius: '50%',
-    color: '#000',
+    color: vars.colors.neutral.magnolia,
     display: 'flex',
-    height: '50px',
+    height: '32px',
     justifyContent: 'center',
     textAlign: 'center',
     textDecoration: 'none',
-    width: '50px',
-
-    vars: {
-        [bgRound]: '#ccc'
-    },
+    transition: 'all 0.25s ease-in-out',
+    width: '32px',
 
     ':hover': {
-        vars: {
-            [bgRound]: 'red'
-        }
+        backgroundColor: vars.colors.primary.marineBlue,
     },
 });
 
