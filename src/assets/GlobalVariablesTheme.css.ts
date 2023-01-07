@@ -1,4 +1,4 @@
-import { createGlobalTheme } from '@vanilla-extract/css';
+import { createGlobalTheme, globalStyle, style } from '@vanilla-extract/css';
 
 export const vars = createGlobalTheme(':root', {
     colors: {
@@ -16,10 +16,33 @@ export const vars = createGlobalTheme(':root', {
             alabaster: 'hsl(231, 100%, 99%)',
             black: 'hsl(255, 0%, 0%)',
             white: 'hsl(0, 0%, 100%)',
-            transparent: 'hsl(255, 0%, 100%)',
+            transparent: 'hsla(255, 100%, 100%, 0)',
         }
     },
     font: {
       base: 'Ubuntu, sans-serif'
     }
-  });
+});
+
+globalStyle('html, body', {
+    margin: 0
+});
+
+globalStyle('*', {
+    boxSizing: 'border-box'
+});
+
+export const app = style({
+    minHeight: '100vh',
+    
+    '@media': {
+        'screen and (min-width: 1440px)': {
+            display: 'flex'
+        }
+    }
+})
+
+export const stepLayout = style({
+    backgroundColor: vars.colors.primary.lightBlue,
+    paddingBottom: 72,
+})

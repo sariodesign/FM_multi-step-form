@@ -1,14 +1,15 @@
-import { style, globalStyle } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '../../assets/GlobalVariablesTheme.css'
-
-globalStyle('html, body', {
-  margin: 0
-});
 
 export const navigation = style({
     backgroundImage: 'url("/bg-sidebar-mobile.svg")',
     backgroundRepeat: 'no-repeat',
-    display: 'flex'
+    boxSizing: 'border-box',
+    display: 'flex',
+    gap: '16px',
+    height: '172px',
+    justifyContent: 'center',
+    paddingTop: '32px'
 })
 
 export const item = style({
@@ -16,13 +17,11 @@ export const item = style({
     fontFamily: vars.font.base
 })
 
-export const round = style({
+const roundBase = style({
     alignItems: 'center',
-    backgroundColor: vars.colors.neutral.transparent,
     border: '1px solid',
     borderColor: vars.colors.neutral.magnolia,
     borderRadius: '50%',
-    color: vars.colors.neutral.magnolia,
     display: 'flex',
     height: '32px',
     justifyContent: 'center',
@@ -31,9 +30,22 @@ export const round = style({
     transition: 'all 0.25s ease-in-out',
     width: '32px',
 
-    ':hover': {
-        backgroundColor: vars.colors.primary.marineBlue,
-    },
+    '@media': {
+        '(hover: hover)': {
+            backgroundColor: vars.colors.primary.marineBlue,
+        }
+    }
+});
+
+export const round = styleVariants({
+    base: [roundBase, { 
+        backgroundColor: vars.colors.neutral.transparent,
+        color: vars.colors.neutral.magnolia,
+    }],
+    active: [roundBase, {
+        backgroundColor: vars.colors.neutral.magnolia,
+        color: vars.colors.primary.marineBlue,
+    }]
 });
 
 export const text = style({
