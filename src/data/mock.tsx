@@ -62,6 +62,7 @@ export const planList = [
         price: 9,
         currency: ['$','€','£',],
         interval: 'mo',
+        moreInfo: '',
         selected: false
     },
     {
@@ -71,6 +72,7 @@ export const planList = [
         price: 12,
         currency: ['$','€','£',],
         interval: 'mo',
+        moreInfo: '',
         selected: false
     },
     {
@@ -80,6 +82,7 @@ export const planList = [
         price: 15,
         currency: ['$','€','£',],
         interval: 'mo',
+        moreInfo: '',
         selected: false
     }
 ]
@@ -92,6 +95,7 @@ export const addonsList = [
         info: 'Access to multiplayer games',
         price: 1,
         interval: 'mo',
+        moreInfo: '',
         selected: false
     },
     {
@@ -101,6 +105,7 @@ export const addonsList = [
         info: 'Extra 1TB of cloud save',
         price: 2,
         interval: 'mo',
+        moreInfo: '',
         selected: false
     },
     {
@@ -110,6 +115,7 @@ export const addonsList = [
         info: 'Custom team on your profile',
         price: 2,
         interval: 'mo',
+        moreInfo: '',
         selected: false
     }
 ]

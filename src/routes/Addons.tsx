@@ -1,7 +1,8 @@
 import { useState } from "react";
+import StepNavigation from "../components/StepNavigation/StepNavigation";
+import SelectField from "../components/SelectField/SelectField";
 import * as formStep from "../components/FormSteps/FormStep.css"
 import * as data from "../data/mock";
-import SelectField from "../components/SelectField/SelectField";
 
 const Addons = ():JSX.Element => {
     const [addonsSelected, setAddonsSelected] = useState(data.addonsList)
@@ -17,7 +18,7 @@ const Addons = ():JSX.Element => {
         setAddonsSelected([...newAddons])
     }
 
-    return (
+    return <>
         <div className={formStep.container}>
             <h2 className={formStep.legend}>Pick add-ons</h2>
             <p className={formStep.subLegend}>Add-ons help enhance your gaming experience.</p>
@@ -35,7 +36,8 @@ const Addons = ():JSX.Element => {
                 )
             })}
         </div>
-    )
+        <StepNavigation label="Next Step" next="/summary" back="/select-plan" backLink={true} />
+    </>
 }
 
 export default Addons   

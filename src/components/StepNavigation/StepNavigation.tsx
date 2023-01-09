@@ -5,7 +5,7 @@ import * as stepNavigation from "./StepNavigation.css";
 interface btnNavigation {
     label: string,
     backLink: boolean,
-    back?: { [K in backLink]:string};
+    back: string;
     next: string,
 }
 
@@ -19,7 +19,7 @@ const StepNavigation = (props:btnNavigation) => {
     return (
         <div className={stepNavigation.container}>
             { props.backLink && <button className={stepNavigation.btnLink} onClick={() => navigateHandler(props.back)}>Go back</button> }
-            <button className={stepNavigation.btnPrimary} onClick={() => navigateHandler(props.next)}>{props.label}</button>
+            { props.next ? <button className={stepNavigation.btnPrimary} onClick={() => navigateHandler(props.next)}>{props.label}</button> : <button className={stepNavigation.btnPrimary}>{props.label}</button> } 
         </div>
     )
 }

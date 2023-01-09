@@ -1,7 +1,8 @@
 import { useState } from "react";
+import SelectField from "../components/SelectField/SelectField";
+import StepNavigation from "../components/StepNavigation/StepNavigation";
 import * as formStep from "../components/FormSteps/FormStep.css"
 import * as data from "../data/mock";
-import SelectField from "../components/SelectField/SelectField";
 
 const Plan = ():JSX.Element => {
     const [planSelected, setPlanSelected] = useState(data.planList)
@@ -29,7 +30,7 @@ const Plan = ():JSX.Element => {
         setPlanSelected([...newPlans])
     }
 
-    return (
+    return <>
         <div className={formStep.container}>
             <h2 className={formStep.legend}>Select your plan</h2>
             <p className={formStep.subLegend}>You have the option of monthly or yearly billing.</p>
@@ -56,7 +57,8 @@ const Plan = ():JSX.Element => {
                 </label>
             </div>
         </div>
-    )
+        <StepNavigation label="Next Step" next="/add-ons" back="/info" backLink={true} />
+    </>
 }
 
 export default Plan

@@ -15,7 +15,7 @@ const Info = () => {
             <p className={formStep.subLegend}>Please provide your name, email address, and phone number</p>
             {fields}
         </div>
-        <StepNavigation label="Next Step" next="/select-plan" backLink={false} />
+        <StepNavigation label="Next Step" next="/select-plan" back="" backLink={false} />
     </>
 }
 
