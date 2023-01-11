@@ -1,15 +1,27 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '../../assets/GlobalVariablesTheme.css'
 
-export const container = style({
+export const baseContainer = style({
     backgroundColor: '#fff',
     bottom: 0,
     display: 'flex',
-    justifyContent: 'space-between',
     left: 0,
     padding: 16,
     position: 'fixed',
     width: '100%'
+})
+
+export const container = styleVariants({
+    base:[baseContainer, {
+        justifyContent: 'space-between',
+    }],
+    alignRight:[baseContainer, {
+        justifyContent: 'flex-end',
+    }]
+});
+
+export const containerAlignRight = style({
+    justifyContent: 'flex-end'
 })
 
 export const btnLink = style({

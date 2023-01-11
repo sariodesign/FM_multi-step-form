@@ -35,6 +35,7 @@ export const routeLinks = [
 export const infoFields = [
     {
         label: 'Name' ,
+        name: 'name',
         type: 'text',
         placeholder: 'e.g. Stephen King',
         required: true
@@ -42,12 +43,14 @@ export const infoFields = [
     {
         label: 'Email address',
         type: 'email',
+        name: 'email',
         placeholder: 'e.g. stephenking@lorem.com',
         required: true 
     },
     {
         label: 'Phone number',
         type: 'tel',
+        name: 'phone',
         placeholder: 'e.g. +1 234 567 890',
         required: true
     }

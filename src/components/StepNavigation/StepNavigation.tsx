@@ -14,10 +14,11 @@ const StepNavigation = (props:btnNavigation) => {
     
     const navigateHandler = (linkTo:string) => {
         navigate(linkTo)
+        
     }
 
     return (
-        <div className={stepNavigation.container}>
+        <div className={!props.backLink ? stepNavigation.container.alignRight : stepNavigation.container.base}>
             { props.backLink && <button className={stepNavigation.btnLink} onClick={() => navigateHandler(props.back)}>Go back</button> }
             { props.next ? <button className={stepNavigation.btnPrimary} onClick={() => navigateHandler(props.next)}>{props.label}</button> : <button className={stepNavigation.btnPrimary}>{props.label}</button> } 
         </div>

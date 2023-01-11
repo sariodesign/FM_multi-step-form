@@ -17,7 +17,7 @@ export const input = style({
     border: '1px solid',
     borderColor: vars.colors.neutral.lightGray,
     borderRadius: 4,
-    color: vars.colors.neutral.coolGray,
+    color: vars.colors.neutral.black,
     height: 40,
     padding: '0 16px',
 
